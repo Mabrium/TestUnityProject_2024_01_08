@@ -31,21 +31,24 @@ public class TempGameObject : MonoBehaviour
     }
     public void MoveCube()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.position += new Vector3(0.0f, MoveSpeed * Time.deltaTime, 0.0f);
-        }
-        if (Input.GetKey(KeyCode.DownArrow)) 
-        {
-            transform.position += new Vector3(0.0f, -MoveSpeed * Time.deltaTime, 0.0f);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position += new Vector3(MoveSpeed * Time.deltaTime, 0.0f, 0.0f);
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.position += new Vector3(-MoveSpeed * Time.deltaTime, 0.0f, 0.0f);
-        }
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+
+        transform.position = pos += move * Time.deltaTime * MoveSpeed;
+        //if (Input.GetKey(KeyCode.UpArrow))
+        //{
+        //    transform.position += new Vector3(0.0f, MoveSpeed * Time.deltaTime, 0.0f);
+        //}
+        //if (Input.GetKey(KeyCode.DownArrow))
+        //{
+        //    transform.position += new Vector3(0.0f, -MoveSpeed * Time.deltaTime, 0.0f);
+        //}
+        //if (Input.GetKey(KeyCode.RightArrow))
+        //{
+        //    transform.position += new Vector3(MoveSpeed * Time.deltaTime, 0.0f, 0.0f);
+        //}
+        //if (Input.GetKey(KeyCode.LeftArrow))
+        //{
+        //    transform.position += new Vector3(-MoveSpeed * Time.deltaTime, 0.0f, 0.0f);
+        //}
     }
 }
